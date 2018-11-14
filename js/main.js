@@ -7,7 +7,9 @@
         data : {
             carModel : "",
             carDescription : "",
-            carPricing : ""
+            carPricing : "",
+
+            videosrc = ".video/mini_1.mp4"
         },
 
         mounted : function(){
@@ -27,6 +29,15 @@
             }, 3000);
         },
         method : {
+            volOn(e){
+                console.log('moused over the video');
+                e.currentTarget.nuted = false;
+            },
+
+            volOff(e){
+                console.log('moused off the video');
+                e.currentTarget.nuted = true;
+            },
             addPreloader(parentEl){
                 parentEl.appendChild(document.querySelector('.preloader-wrapper'));
                 bodymovin.loadAnimation({
